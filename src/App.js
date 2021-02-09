@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react"
+import './App.css'
+import Header from './components/header'
+import Sidebar from './components/sidebar'
 
 function App() {
+  const [user, setUser] = useState ({
+    displayName: "Denis Listiadi",
+    email: "denislistiadi24@gmail.com",
+    emailVerified: true,
+    phoneNumber: null,
+    photoURL: "https://vignette.wikia.nocookie.net/toonami/images/3/3c/Kenshin_Himura.jpg/revision/latest?cb=20131010154417"
+  })
+  // authentication
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header userPhoto={user.photoURL} />
+      <Sidebar />
     </div>
   );
 }
