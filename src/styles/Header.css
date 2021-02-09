@@ -10,22 +10,22 @@
 }
 
 .header_logo {
-    display: flex;
-    justify-content: flex-start;
+    display: float;
     align-items: center;
 }
 
 .logo_image {
-    height: 100%;
+    float: left;
+    height: 40px;
     object-fit: contain;
 }
 
-.logo_name {
+h1 {
+    float: right;
     color: gray;
     font-size: 24px;
     font-weight: 500;
     margin-left: 16px;
-    justify-content: center;
 }
 
 .header__searchContainer {
@@ -66,7 +66,6 @@
 .header__icons {
     display: flex;
     align-items: center;
-    margin-right: -30px;
 }
 
 .header__icons .MuiSvgIcon-root {

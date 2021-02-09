@@ -1,13 +1,10 @@
 import React from 'react'
 import '../../styles/Header.css'
-
 import GDriveLogo from '../../media/google-drive_logo.png'
-
 import SearchIcon from '@material-ui/icons/Search';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import SettingsIcon from '@material-ui/icons/Settings';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AppsIcon from '@material-ui/icons/Apps';
 
 const index = ({ userPhoto }) => {
@@ -15,7 +12,7 @@ const index = ({ userPhoto }) => {
         <div className='header'>
             <div className="header__logo">
                 <img className='logo_image' src={GDriveLogo} alt="Google Drive" />
-                <span className='logo_name'>Drive</span>
+                <h1>Driver</h1>
             </div>
             <div className="header__searchContainer">
                 <div className="header__searchBar">
@@ -30,7 +27,7 @@ const index = ({ userPhoto }) => {
                     <SettingsIcon />
                 </span>
                 <AppsIcon />
-                <img src={userPhoto} alt="User Photo"/>
+                <img src={userPhoto} alt="Account"/>
             </div>
         </div>
     )

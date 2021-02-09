@@ -1,22 +1,42 @@
 import { useState } from "react"
 import './App.css'
+import FilesView from "./components/filesview/FilesView"
 import Header from './components/header'
 import Sidebar from './components/sidebar'
+import SideIcons from './components/sideicons'
+import GDriveLogo from './media/google-drive_logo.png'
+import { auth, provider } from './firebase'
 
 function App() {
-  const [user, setUser] = useState ({
-    displayName: "Denis Listiadi",
-    email: "denislistiadi24@gmail.com",
-    emailVerified: true,
-    phoneNumber: null,
-    photoURL: "https://vignette.wikia.nocookie.net/toonami/images/3/3c/Kenshin_Himura.jpg/revision/latest?cb=20131010154417"
-  })
-  // authentication
+  const [user, setUser] = useState()
+
+  const handleLogin = () => {
+    if (!user) {
+      auth.signInWithPopup(provider).then((result) => {
+        setUser(result.user)
+      })
+    }
+  } 
 
   return (
     <div className="App">
-      <Header userPhoto={user.photoURL} />
-      <Sidebar />
+    {
+      user ? (
+        <>
+          <Header userPhoto={user.photoURL} />
+          <div className="app_main">
+            <Sidebar />
+            <FilesView />
+            <SideIcons />
+          </div>
+        </>
+      ) : (
+          <div className='app_login'>
+            <img src={GDriveLogo} alt='Google Drive' />
+            <button onClick={handleLogin}>Log in to Google Drive</button>
+          </div>
+      )
+    }
     </div>
   );
 }
