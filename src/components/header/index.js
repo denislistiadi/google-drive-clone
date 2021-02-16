@@ -12,7 +12,7 @@ const index = ({ userPhoto }) => {
         <div className='header'>
             <div className="header__logo">
                 <img className='logo_image' src={GDriveLogo} alt="Google Drive" />
-                <h1>Driver</h1>
+                <h1>Drive</h1>
             </div>
             <div className="header__searchContainer">
                 <div className="header__searchBar">
